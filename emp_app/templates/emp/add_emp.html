@@ -1,0 +1,44 @@
+{% extends 'emp/base.html' %}
+{% block title %}add_emp{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <h1>add An employee:-</h1>
+    <hr>
+<form method="post" action="/add_emp">{% csrf_token %}
+    <div class="mb-3">
+      <label for="first_name" class="form-label">firstName</label>
+      <input type="text" class="form-control" id="firstname" name="firstname" value="{{first_name}}">
+    </div>
+    <div class="mb-3">
+        <label for="last_name" class="form-label">LastName</label>
+        <input type="text" class="form-control" id="lastname" name="lastname" value="{{last_name}}">
+    </div>
+    <div class="mb-3">
+        <label for="dept" class="form-label">Department</label>
+        <input type="number" class="form-control" id="dept" name="dept" value="{{dept}}">
+    </div>
+    <div class="mb-3">
+        <label for="salary" class="form-label">Salary</label>
+        <input type="number" class="form-control" id="salary" name="salary" value="{{salary}}">
+    </div>
+    <div class="mb-3">
+        <label for="bonus" class="form-label">Bonus</label>
+        <input type="number" class="form-control" id="bonus" name="bonus" value="{{bonus}}">
+    </div>
+    <div class="mb-3">
+        <label for="role" class="form-label">role</label>
+        <input type="number" class="form-control" id="role" name="role" value="{{role}}">
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="tel" class="form-control" id="phone" name="phone" value="{{phone}}">
+    </div>
+    <div class="mb-3">
+        <label for="hiredate" class="form-label">HireDate</label>
+        <input type="text" class="form-control" id="hiredate" name="hiredate" value="{{hiredate}}">
+    </div>
+    <button type="submit" class="btn btn-warning">Submit</button>
+  </form>
+</div>
+{% endblock body %}

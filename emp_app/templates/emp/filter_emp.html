@@ -1,0 +1,23 @@
+{% extends 'emp/base.html' %}
+{% block title %}filter_emp{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <h1>Filter Employee Details</h1>
+    <form method="post" action="/filter_emp">{% csrf_token %}
+        <div class="mb-3">
+          <label for="name" class="form-label">Employee First/Last Name</label>
+          <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+        </div>
+        <div class="mb-3">
+            <label for="dept" class="form-label">Department</label>
+            <input type="text" class="form-control" id="dept" name="dept" value="{{dept}}">
+        </div>
+        <div class="mb-3">
+            <label for="role" class="form-label">role</label>
+            <input type="text" class="form-control" id="role" name="role" value="{{role}}">
+        </div>
+        <button type="submit" class="btn btn-warning">Submit</button>
+      </form>
+</div>
+{% endblock body %}
